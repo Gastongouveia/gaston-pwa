@@ -1,5 +1,5 @@
 // Referências para os módulos utilizados nesse arquivo -> Require node_modules
-const express = require ('express'); //Framework Express
+const express = require('express'); //Framework Express
 const consign = require('consign'); //Assinador de acesso as pastas e arquivos da aplicação
 const bodyParser = require('body-parser'); //Encoded para o padrão de HTML
 const expressValidator = require('express-validator');
