@@ -48,18 +48,67 @@
           <h5 class="header col s12 light">Este é meu site PWM</h5>
         </div>
         <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light red">Começar</a>
+          <button id="download" class="btn-large waves-effect waves-light red">Começar</button>
         </div>
         <br><br>
-
+  
       </div>
     </div>
   </div>
+    
+
+  <footer class="page-footer red">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Programador web</h5>
+          <p class="grey-text text-lighten-4">Site desenvolvido para aula do curso de programador web do Senac Recife.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Gaston</a>
+      </div>
+    </div>
+  </footer>
+
 
   <!--  Scripts-->
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+  <script>
+    $('#download').click(function () {
+      $.ajax({
+        url: '/contatos',
+        method: 'get',
+        success: function (data) {
+          $('#index-banner').html(data);
+        }
+      });
+    });
+  </script>
 
   </body>
 </html>
