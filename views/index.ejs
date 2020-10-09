@@ -28,16 +28,16 @@
   <div>
     <nav class="light-blue lighten-1" role="navigation">
       <div class="nav-wrapper container">
-        <a id="logo-container" href="http://gaston-pwa.herokuapp.com" class="brand-logo" style="margin-top: 5px;" >
+        <a id="logo-container" href="/" class="brand-logo" style="margin-top: 5px;" >
           <img src="assets/img/gastonNovo.png" width="100" alt="logo">
         </a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="http://gaston-pwa.herokuapp.com" style="color: black;">Home</a></li>
+          <li><a id="home" style="color: black;">Home</a></li>
           <li><a id='servicos' style="color: black;">Serviços</a></li>
         </ul>
 
         <ul id="nav-mobile" class="sidenav">
-          <li><a href="http://gaston-pwa.herokuapp.com" style="color: red;">Home</a></li>
+          <li><a id="home" style="color: red;">Home</a></li>
           <li><a id='servicos' style="color: red;">Serviços</a></li>
         </ul>
         <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons" style="color: black;">menu</i></a>
@@ -48,16 +48,25 @@
         <br><br>
         <h1 class="header center orange-text" style="color: red !important;">Bem-vindos</h1>
         <div class="row center">
-          <h5 class="header col s12 light">Este é meu site PWM</h5>
+          <%for (var i=0; i<dados.pessoa.length; i++) { %>
+            <h5 style="color: red;" class="header col s12 light"><%="Nome: " + dados.pessoa[i].nome %></h5>
+            <h5 style="color: red;" class="header col s12 light"><%=dados.pessoa[i].idade %></h5>
+            <h5 style="color: red;" class="header col s12 light"><%=dados.pessoa[i].profissao %></h5>
+          <%}%>
+          
         </div>
         <div class="row center">
-          <button id="download" class="btn-large waves-effect waves-light red">Começar</button>
+          <button id="download" class="btn-large waves-effect waves-light red">COMEÇAR</button>
         </div>
         <br><br>
   
       </div>
     </div>
   </div>
+
+  <% for (var a = 0; a < 5; a++){
+    console.log('to na index');
+  } %>
     
 
   <footer class="page-footer red">
@@ -122,6 +131,25 @@
       });
     });
     
+    $('#logo-container').click(function () {
+      $.ajax({
+        url: '/',
+        method: 'get',
+        success: function (data) {
+         $('#index-banner').html(data);
+       } 
+      });
+    });
+
+    $('#home').click(function () {
+      $.ajax({
+        url: '/',
+        method: 'get',
+        success: function (data) {
+         // $('#index-banner').html(data);
+        }
+      });
+    });
   </script>
 
   </body>
