@@ -25,35 +25,48 @@
 
 </head>
 <body>
+  <header>
+    <div class="navbar-fixed">
+      <nav class="blue" style="color: #21a5f3;!important" role="navigation">
+        <div class="nav-wrapper container">
+          <a id="logo-container" href="/" class="brand-logo" style="margin-top: 5px;" >
+            <img src="assets/img/gastonNovo.png" width="100" alt="logo">
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/" style="color: black;"><span class="material-icons">home</span>Home</a></li>
+            <li><a id='servicos' style="color: black;"><span class="material-icons">work</span>Serviços</a></li>
+          </ul>
+    
+          <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons" style="color: black;">menu</i></a>
+        </div>
+      </nav>
+    </div>
+    <ul id="slide-out" class="sidenav">
+      <li>
+        <div class="user-view">
+          <div class="background">
+            <img style="width: 300px;" src="/assets/img/plano-de-fundo-1.png">
+          </div>
+          <a href="#user"><img class="circle" src="/assets/img/IMG_20200502_004934_851.jpg"></a>
+          <a href="#name"><span style="color: black !important;" class="white-text name"><%=dados.pessoa[0].nome%></span></a>
+          <a href="#email"><span style="color: black !important;" class="white-text email"><%=dados.pessoa[0].email%></span></a>
+        </div>
+      </li>
+      <li><a id='servicos'><i class="material-icons">work</i>Serviços</a></li>
+      <li><a href="#!">Second Link</a></li>
+      <li><div class="divider"></div></li>
+      <li><a class="subheader">Subheader</a></li>
+      <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    </ul>
+  </header>
   <div>
-    <nav class="light-blue lighten-1" role="navigation">
-      <div class="nav-wrapper container">
-        <a id="logo-container" href="/" class="brand-logo" style="margin-top: 5px;" >
-          <img src="assets/img/gastonNovo.png" width="100" alt="logo">
-        </a>
-        <ul class="right hide-on-med-and-down">
-          <li><a id="home" style="color: black;">Home</a></li>
-          <li><a id='servicos' style="color: black;">Serviços</a></li>
-        </ul>
-
-        <ul id="nav-mobile" class="sidenav">
-          <li><a id="home" style="color: red;">Home</a></li>
-          <li><a id='servicos' style="color: red;">Serviços</a></li>
-        </ul>
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons" style="color: black;">menu</i></a>
-      </div>
-    </nav>
     <div class="section no-pad-bot" id="index-banner">
       <div class="container">
         <br><br>
         <h1 class="header center orange-text" style="color: red !important;">Bem-vindos</h1>
         <div class="row center">
-          <%for (var i=0; i<dados.pessoa.length; i++) { %>
-            <h5 style="color: red;" class="header col s12 light"><%="Nome: " + dados.pessoa[i].nome %></h5>
-            <h5 style="color: red;" class="header col s12 light"><%=dados.pessoa[i].idade %></h5>
-            <h5 style="color: red;" class="header col s12 light"><%=dados.pessoa[i].profissao %></h5>
-          <%}%>
-          
+         <h5 style="color: red;">Meu site PWA </h5>
+         
         </div>
         <div class="row center">
           <button id="download" class="btn-large waves-effect waves-light red">COMEÇAR</button>
@@ -63,11 +76,6 @@
       </div>
     </div>
   </div>
-
-  <% for (var a = 0; a < 5; a++){
-    console.log('to na index');
-  } %>
-    
 
   <footer class="page-footer red">
     <div class="container">
@@ -131,25 +139,25 @@
       });
     });
     
-    $('#logo-container').click(function () {
-      $.ajax({
-        url: '/',
-        method: 'get',
-        success: function (data) {
-         $('#index-banner').html(data);
-       } 
-      });
-    });
+    // $('#logo-container').click(function () {
+    //   $.ajax({
+    //     url: '/',
+    //     method: 'get',
+    //     success: function (data) {
+    //      $('#index-banner').html(data);
+    //    } 
+    //   });
+    // });
 
-    $('#home').click(function () {
-      $.ajax({
-        url: '/',
-        method: 'get',
-        success: function (data) {
-         // $('#index-banner').html(data);
-        }
-      });
-    });
+    // $('#home').click(function () {
+    //   $.ajax({
+    //     url: '/',
+    //     method: 'get',
+    //     success: function (data) {
+    //      // $('#index-banner').html(data);
+    //     }
+    //   });
+    // });
   </script>
 
   </body>

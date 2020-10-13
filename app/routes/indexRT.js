@@ -6,6 +6,7 @@ module.exports = function(mocai){
     var dados = {
       'pessoa': [{
         'nome':'Gaston',
+        'email':'gastonagouveia@recife.pe.senac.br',
         'idade':30,
         'peso':100,
         'profissao':'Estudante'
